@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Parcial01{
+public class Parcial01 {
     public static void main(String[] args) throws Exception {
         int[] consumo = new int[10];
         Scanner leer = new Scanner(System.in);
