@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ProduccionMaquinas {
+public class Produccionesmaquinas {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
 
@@ -109,7 +109,3 @@ public class ProduccionMaquinas {
         leer.close(); 
         } 
         }
-        
-    
-
-
