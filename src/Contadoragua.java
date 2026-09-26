@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Parcial01 {
+public class Contadoragua {
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
