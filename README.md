@@ -1,110 +1,67 @@
-# Primer Parcial Práctico – Programación I
+**primer ejercicio¡**
+habia obtenido un error porque en el primer codigo porque metì todo dentro del primer for, haciendo que por cada linea de codigo me diera cada que leia un dato el promedio y la cantidad total producida.
+**correcciòn del codigo** 
+aplique mas o menos un sdlc pa5ra poder ordenar mi algoritmo y aplicarle una mejor logica.
+ 
+ **analisis de datos**
+ El objetivo es crear un programa para monitorear el consumo de agua en 10 sectores urbanos/agrícolas.
 
-## Versión A
+• **Entradas:** Consumos individuales (enteros no negativos).
 
-**Lenguaje:** Java  
-**Modalidad:** Individual  
-**Duración total:** 60 minutos  
-**Valor:** 100 puntos  
-**Temas:** arreglos unidimensionales, arreglos bidimensionales, ciclos, condicionales, contadores y acumuladores.
+• **Salidas:** Consumo total, promedio, sector con mayor consumo, cantidad de sectores sobre el promedio, racha más larga de sectores sobre el promedio y resumen por sector.
 
----
+**paso a paso de mi codigo**
+**entrada de datos**
+Se crea un arreglo de 10 posiciones para almacenar cada sector.Se usa un ciclo for para iterar desde el sector 1 hasta el 10.Dentro del ciclo, el while (consumo[i] < 0) actúa como filtro de validación: no permite continuar hasta que el usuario ingrese un valor.A medida que se valida cada dato, se suma al acumulador total.
+**promedio y sector de mayor consumo**
+Se realiza un casting explícito (double) sobre total. Esto es clave para evitar la división entera y obtener la precisión decimal del promedio.
 
-## Indicaciones generales
+lueglo, para calcular el sector de mayor consumo se asume temporalmente que el primer sector (consumo[0]) tiene el valor más alto.
 
-- Desarrolle los dos ejercicios en Java y desde consola.
-- Cada ejercicio debe resolverse en un archivo independiente.
-- Toda la solución debe estar dentro del método `main`.
-- Puede utilizar `Scanner`, arreglos, matrices, ciclos y condicionales.
-- No se permite utilizar `ArrayList`, colecciones, `Stream`, métodos de ordenamiento automático ni métodos creados por el estudiante.
-- Los datos deben ser solicitados al usuario; no deben quedar escritos directamente en el código.
-- Los resultados deben mostrarse de forma clara e identificable.
-- Si se presenta un empate, debe reportarse la primera posición encontrada.
+Se recorre el arreglo: si se encuentra un valor mayor al registrado en mayor, se actualiza tanto el valor máximo como la posición del sector (i + 1).
+**para la racha y el conteo de sectores sobre promedio**
+cantidad: Cuenta cuántos sectores superan la media matemática.
 
----
+racha y mayorRacha: Evalúan sectores consecutivos que superan la media. Si el sector actual supera el promedio, la racha aumenta en 1; si no, la racha actual se reinicia a 0. Se conserva el récord histórico en mayorRacha.
+**resultados**
+Se imprimen los consolidados finales e históricos por sector mediante líneas divisorias.
 
-# Ejercicio 1 – Consumo de agua por sectores
+leer.close() libera la memoria asignada al objeto Scanner.
 
-**Tiempo sugerido:** 30 minutos  
-**Valor:** 50 puntos
+**segundo ejercicio**
+en el segundo ejercicio empecè quemando valores en la matriz por problemas de tiempo y no logrè terminar el algoritmo.
 
-Una empresa de servicios públicos registró el consumo diario de agua de **10 sectores** de la ciudad. La información se expresa en metros cúbicos enteros y debe almacenarse en un arreglo unidimensional.
+**correcòn de errores**
+apliquè un paso a paso en mi logica logaritmica.
 
-Construya un programa que:
+**declaracion de variables**
+longitudfilas y longitudcolumnas: Definen las dimensiones fijas de la matriz .matriz: Es la estructura donde se almacenan las 20 entradas .suma, sumadias, sumatotal: Variables acumuladoras para las distintas etapas de cálculo.
+se evalua para que si ingresan un numero negativo, diga que error y reitere al print 
 
-1. Cree un arreglo de 10 posiciones.
-2. Solicite el consumo de cada sector y valide que no sea negativo. Si el dato es inválido, debe solicitarlo nuevamente.
-3. Calcule y muestre:
-   - El consumo total de los 10 sectores.
-   - El promedio de consumo.
-   - El número del sector con el mayor consumo.
-   - Cuántos sectores tuvieron un consumo superior al promedio.
-   - La racha más larga de sectores consecutivos cuyo consumo fue superior al promedio.
-4. Muestre el listado final con el número de cada sector y su consumo registrado.
+**calculo de la produccion por maquina y la mayor cantidad producida**
+El recorrido por Filas  mantiene fija la fila j (máquina) y suma todos los días k que pertenecen a esa fila.
 
-## Aclaraciones
+Imprime el total producido por la máquina actual.
 
-- Los sectores se numeran del 1 al 10, aunque las posiciones del arreglo comiencen en 0.
-- Una racha es una secuencia de posiciones consecutivas. Por ejemplo, si los sectores 3, 4 y 5 superan el promedio, existe una racha de longitud 3.
-- Para determinar cuáles consumos superan el promedio será necesario recorrer nuevamente el arreglo después de calcularlo.
+Compara el acumulado suma con mayorMaquina. Si es superior, actualiza la mayor producción encontrada y guarda la posición de la máquina en posicionMayor
 
-## Criterios de evaluación
+**calculo de produccion por dia y el minimo de produccion**
+El recorrido por Columnas mantiene fija la columna k (día) e iterando las filas j suma la producción de todas las máquinas en ese mismo día.
 
-| Criterio | Puntaje |
-|---|---:|
-| Lectura, almacenamiento y validación de los 10 consumos | 10 |
-| Cálculo correcto del total y del promedio | 10 |
-| Identificación del sector con mayor consumo | 10 |
-| Conteo de sectores por encima del promedio | 8 |
-| Cálculo correcto de la racha más larga | 8 |
-| Claridad de la salida y organización del código | 4 |
+Imprime el total producido en el dia.
+para calcular la menor produccion; La condición k == 0 permite inicializar menorDia con el valor del primer día. En los días subsiguientes, si sumadias < menorDia, se actualiza el valor mínimo y la variable posicionMenor
 
----
+**mostrar las veces que la producciòn por dia fue inferior a 20**
+Recorre de nuevo la matriz celda por celda con un nuevo for pero esta vez con un if que evalue que si la matriz {j}{k} es menor a 20, a la variable menores20 se le sume 1.
 
-# Ejercicio 2 – Control de producción semanal
+Cada vez que encuentra un registro donde las piezas producidas son estrictamente menores a 20, incrementa el contador menores20.
 
-**Tiempo sugerido:** 30 minutos  
-**Valor:** 50 puntos
+**imprimir resultados y la matriz completa**
 
-Una pequeña fábrica cuenta con **4 máquinas** y registra durante **5 días** la cantidad de piezas producidas por cada una. La información debe almacenarse en una matriz de 4 filas por 5 columnas:
+Imprime la matriz en forma de cuadrícula mediante saltos de línea al término de cada fila.
 
-- Cada fila representa una máquina.
-- Cada columna representa un día de trabajo.
+Muestra el resumen consolidado empleando System.out.println para generar las líneas divisoras.
 
-Construya un programa que:
+Cierra la lectura del escáner mediante leer.close().
 
-1. Cree una matriz de `4 x 5`.
-2. Solicite la producción de cada máquina durante cada día y valide que ningún valor sea negativo.
-3. Calcule y muestre:
-   - El total producido por cada máquina.
-   - El total producido en cada día, sumando las cuatro máquinas.
-   - La máquina con la mayor producción acumulada.
-   - El día con la menor producción total.
-   - Cuántos registros de la matriz fueron inferiores a 20 piezas.
-4. Muestre la matriz completa, organizada por máquinas y días.
 
-## Aclaraciones
-
-- Las máquinas se numeran del 1 al 4 y los días del 1 al 5.
-- Si dos máquinas tienen el mismo total máximo, se reporta la primera.
-- Si dos días tienen el mismo total mínimo, se reporta el primero.
-- No es necesario crear arreglos adicionales para resolver el ejercicio, aunque puede utilizarlos si lo considera conveniente.
-
-## Criterios de evaluación
-
-| Criterio | Puntaje |
-|---|---:|
-| Lectura, almacenamiento y validación de la matriz | 10 |
-| Cálculo del total de cada máquina | 10 |
-| Cálculo del total de cada día | 10 |
-| Identificación de la máquina mayor y el día menor | 10 |
-| Conteo de registros inferiores a 20 | 6 |
-| Presentación de la matriz y organización del código | 4 |
-
----
-
-## Entrega
-
-Entregue los dos archivos `.java`, debidamente nombrados y capaces de compilar y ejecutarse sin errores.
-
-**Antes de escribir código, identifique las entradas, el proceso y las salidas. El compilador detecta errores de sintaxis; la lógica todavía corre por cuenta del programador.**

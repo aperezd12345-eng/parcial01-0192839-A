@@ -98,13 +98,13 @@ public class Produccionmaquina {
             System.out.println();
         }
          //Resultados que me estan pidiendo
-        System.err.println("----------------------------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------");
         System.out.println("La máquina con mayor produccion es la maquina N" + posicionMayor + " con una producción de " + mayorMaquina );
-        System.err.println("----------------------------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------");
         System.out.println("El día con menor producción es el dia: " + posicionMenor + " con una producción de " + menorDia );
-        System.err.println("----------------------------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------");
         System.out.println("La cantidad de registros por maquinas inferiores a 20 piezas fue de: " + menores20);
-        System.err.println("----------------------------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------");
             
         leer.close(); 
         } 

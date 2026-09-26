@@ -59,7 +59,7 @@ public class Contadoragua {
         System.out.println("Racha más larga: " + mayorRacha);
         System.out.println("-----------------------------------------------------------------------------------------------------------");
 
-        System.out.println("SECTORES ");
+        System.out.println(" CONSUMO POR SECTORES ");
         for (int i = 0; i < longitud; i++)
             System.out.println("Sector " + (i + 1) + ": " + consumo[i] );
 
